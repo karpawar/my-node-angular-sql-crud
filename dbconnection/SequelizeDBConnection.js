@@ -1,12 +1,12 @@
 var SequelizeObj = require("sequelize");
-var sequelizeObj = new SequelizeObj("mysql://root:root@localhost:3306/KP");
+var sequelizeObj = new SequelizeObj("mysql://root:123456@localhost:3306/node_sql");
 sequelizeObj
   .authenticate()
   .then(function(err) {
-    console.log('Connection has been established successfully.');
+    console.log('Connection >> Established Successfully.');
   })
   .catch(function (err) {
-    console.log('Unable to connect to the database for version base:', err);
+    console.log('Connection Error >> Unable to connect to the database for version base:', err);
   });
 
 module.exports.Sequelize = SequelizeObj;

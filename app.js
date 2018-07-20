@@ -8,6 +8,9 @@ var middleware = require('./middleware.js')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var country = require('./routes/country');
+var state = require('./routes/state');
+var city = require('./routes/city');
 
 var app = express();
 app.use(express.static(path.join(__dirname, 'angular-frontend/dist')));
@@ -38,6 +41,9 @@ app.use(middleware());
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/country', country);
+app.use('/state', state);
+app.use('/city', city);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
